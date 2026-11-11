@@ -6,7 +6,7 @@ This project analyzes financial transactions and develops machine learning model
 
 The analysis uses the **PaySim dataset**, a synthetic dataset representing mobile money transactions.
 
-The project combines data validation, exploratory data analysis (EDA), feature engineering, and supervised machine learning.
+The project combines data validation, exploratory data analysis (EDA), feature engineering, and supervised machine learning. Findings are communicated through a two-page Power BI dashboard and a seven-slide project presentation.
 
 ## Objectives
 
@@ -43,6 +43,9 @@ financial-transaction-analytics/
 │   ├── 02_data_cleaning.ipynb
 │   ├── 03_exploratory_data_analysis.ipynb
 │   └── 04_fraud_detection.ipynb
+├── powerbi/                       # Two-page Power BI report (.pbix)
+├── presentations/
+│   └── Fraud_Detection_Project.pptx
 ├── .gitignore
 └── README.md
 ```
@@ -72,9 +75,16 @@ A chronological data split was used to separate training, validation, and test p
 
 Classification thresholds were selected using validation data, with particular attention to precision, recall, and F1-score.
 
+## Exploratory Analysis: Key Findings
+
+- Fraud is rare: **8,213 of 6,362,620 transactions (0.129%)** are labeled fraudulent.
+- All labeled fraud cases in PaySim occur in **TRANSFER** and **CASH_OUT** transactions.
+- Fraud rates differ by transaction type: approximately **0.769% for TRANSFER** and **0.184% for CASH_OUT**.
+- Transactions labeled as fraud represent approximately **12.06 billion simulated monetary units** in total, split almost equally between TRANSFER and CASH_OUT. These amounts are **not verified real-world losses**.
+
 ## Model Performance
 
-The following results were obtained on the chronological test dataset.
+The following results were obtained on the chronological test dataset (**123,580 transactions**, including **1,654 labeled frauds**).
 
 | Metric | Logistic Regression | Random Forest |
 |---|---:|---:|
@@ -101,6 +111,21 @@ According to Random Forest impurity-based feature importance, the most influenti
 
 These values describe relative feature importance within the fitted model and should not be interpreted as causal relationships.
 
+## Power BI Dashboard
+
+The project includes a **two-page interactive Power BI report** that presents the exploratory analysis and the fraud-detection results.
+
+1. **Financial Transaction Overview** — total transactions, fraud count and fraud rate, transactions by type, fraud rate by type, and fraudulent transaction amounts.
+2. **Fraud Detection Models** — Logistic Regression versus Random Forest performance (precision, recall and F1-score), their confusion matrices, and key findings.
+
+The Power BI `.pbix` report is located in the [`powerbi/`](powerbi/) directory.
+
+## Project Presentation
+
+A **seven-slide presentation** summarizes the dataset, transaction patterns, fraud distribution, the machine-learning workflow, model performance, and the project's conclusions and limitations.
+
+[**View the PowerPoint presentation**](presentations/Fraud_Detection_Project.pptx)
+
 ## Technologies
 
 - Python
@@ -110,6 +135,8 @@ These values describe relative feature importance within the fitted model and sh
 - Seaborn
 - Scikit-learn
 - Jupyter Notebook
+- Power BI
+- PowerPoint / ONLYOFFICE Presentations
 - Git and GitHub
 
 ## Limitations
