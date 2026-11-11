@@ -45,7 +45,8 @@ financial-transaction-analytics/
 │   └── 04_fraud_detection.ipynb
 ├── powerbi/                       # Two-page Power BI report (.pbix)
 ├── presentations/
-│   └── Fraud_Detection_Project.pptx
+│   ├── Fraud_Detection_Project.pptx
+│   └── Fraud_Detection_Project.pdf
 ├── .gitignore
 └── README.md
 ```
@@ -124,7 +125,9 @@ The Power BI `.pbix` report is located in the [`powerbi/`](powerbi/) directory.
 
 A **seven-slide presentation** summarizes the dataset, transaction patterns, fraud distribution, the machine-learning workflow, model performance, and the project's conclusions and limitations.
 
-[**View the PowerPoint presentation**](presentations/Fraud_Detection_Project.pptx)
+[**View the presentation online (PDF)**](presentations/Fraud_Detection_Project.pdf)
+
+[**Download the editable PowerPoint (PPTX)**](presentations/Fraud_Detection_Project.pptx)
 
 ## Technologies
 
